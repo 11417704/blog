@@ -1,3 +1,6 @@
+from pathlib import Path
+import os
+
 """
 Django settings for blog project.
 
@@ -120,6 +123,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+#设置静态资源的路径
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'static'),
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -148,9 +155,6 @@ SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 SESSION_CACHE_ALIAS = "session"
 
 #日志
-
-from pathlib import Path
-import  os
 
 LOGGING = {
     'version': 1,
